@@ -12,8 +12,6 @@ $ rails db:seed
 
 $ rails s
 
-game_die L'APP
-
 Pour tester L'app, rien de plus simple ! un petit : rails s et puis dans votre navigateur
 
 http://localhost:3000/ ! ENJOY !
