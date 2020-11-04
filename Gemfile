@@ -65,13 +65,11 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
 #gem for this project
-gem 'font-awesome-sass', '~> 5.11.2'
 gem 'bcrypt'
 gem "table_print"
 gem 'faker'
 gem 'dotenv-rails'
 gem 'devise'
-gem 'dotenv-rails'
 
 
 
