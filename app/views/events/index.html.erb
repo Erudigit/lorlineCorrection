@@ -1,23 +1,51 @@
-<p id="notice"><%= notice %></p>
+<main role="main">
 
-<h1>Events</h1>
+      <!-- Main jumbotron for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <div class="container">
+          <h1 class="display-3">Events Brite</h1>
+          <p>"Some people look for a beautiful place. Others make a place beautiful.” 
+          -Hazrat Inavat Khan </p>
+          <p><a class="btn btn-primary btn-lg" href="/events/new" role="button"> Create Events </a></p>
+        </div>
+      </div>
+      <table class="table text-center">
+      <thead>
+        <tr>
+          <th>Start date</th>
+          <th>Duration (h)</th>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Price (€)</th>
+          <th>Location</th>
+          <th colspan="5"></th>
+        </tr>
+      </thead>
+  
+      <tbody>
+        <% @events.each do |event| %>
+          <tr>
+            <td><%= event.start_date %></td>
+            <td><%= event.duration %></td>
+            <td><%= event.title %></td>
+            <td><%= event.description %></td>
+            <td><%= event.price %></td>
+            <td><%= event.location %></td>
+            <td><%= link_to 'Show', event, class:'text-primary' %></td>
+            <td><%= link_to 'Edit', edit_event_path(event), class:'text-success' %></td>
+            <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' }, class:'text-danger' %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+   
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @events.each do |event| %>
-      <tr>
-        <td><%= link_to 'Show', event %></td>
-        <td><%= link_to 'Edit', edit_event_path(event) %></td>
-        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+  </body>
+</html>
